@@ -420,8 +420,8 @@ router.get('/', function(req, res, next) {
    #### 2.再用HTML+CSS写出一个登陆界面
 
    ```HTML
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
@@ -539,8 +539,7 @@ router.get('/', function(req, res, next) {
         }
     }
 </script>
-</html>
-```
+</html>```
 
    #### 3.再用HTML+CSS写出一个注册界面
 
