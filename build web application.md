@@ -274,14 +274,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '育知同创' });
+  res.render('index', { title: 'Monster' });
 });
 
 module.exports = router;
 /*
  生成一个路由实例用来捕获访问主页的GET请求，
  导出这个路由并在app.js中通过app.use('/', routes);
- 加载。这样，当访问主页时，就会调用res.render('index', { title: '育知同创' });
+ 加载。这样，当访问主页时，就会调用res.render('index', { title: 'Monster' });
  渲染views/index.ejs模版并显示到浏览器中。
  */
 ```
@@ -312,11 +312,11 @@ routes(app);12
 module.exports = function (app) {
   //一个get请求的路由  http://localhost:3000
   app.get("/", function (req, res) {
-      res.render("index", {title:"育知同创abc"})
+      res.render("index", {title:"Monsterabc"})
   });
   //又一个请求路由：http://localhost:3000/abc
   app.get("/abc", function (req, res) {
-      res.render("index", {title:"育知同创" + req.path})
+      res.render("index", {title:"Monster" + req.path})
   });
 }
 ```
@@ -421,179 +421,217 @@ router.get('/', function(req, res, next) {
 
    ```html
    <!DOCTYPE>
-   <html>
-   <head>
-       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-       <title>Login</title>
-       <style>
-           #login_div {
-               margin: 120px auto;
-               width: 380px;
-               height: 300px;
-               background: rgba(255, 255, 255, 0.2);
-               background: url(images/img3.jpg) no-repeat center center;
-               border-radius: 8px;
-               box-shadow: 0 0 5px #000;
-               text-align: center;
-               font-family: "幼圆";
-               color: #fff;
-               text-shadow: 0 0 2px #000;
-           }
-           .login_input {
-               width: 220px;
-               height: 30px;
-               font-size: 12px;
-               border: 0;
-               border-radius:5px;
-               margin-top:10px;
-               outline: none;
-               position: relative;
-               top:20px;
-               padding: 8px;
-               color: #ff5000;
-               font-weight: bolder;
-           }
-           #login_div > h2 {
-               position: relative;
-               top: 30px;
-               color: #fff;
-           }
-           #login {
-               width: 200px;
-               height: 30px;
-               border-radius: 5px;
-               color: #fff;
-               background: #ff5050;
-               border: 0;
-               padding: 0;
-               cursor: pointer;
-               position: relative;
-               top: 30px;
-           }
-           #remember {
-               width: 200px;
-               height: 30px;
-               border: 0;
-               margin: auto;
-               font-size: 12px;
-               padding: 0;
-               position: relative;
-               top:30px;
-           }
-           #remember p {
-               margin-top: 5px;
-               border: 0;
-               padding: 0;
-               line-height: 20px;
-               height: 20px;
-               width: 100px;
-               float: left;
-               text-shadow: 0 0 1px #333;
-               position: relative;
-               text-align: left;
-               cursor: pointer;
-           }
-           #login_div a {
-               text-shadow: 0 0 1px #000;
-               font-size: 12px;
-               width: 50px;
-               height: 30px;
-               position: relative;
-               margin-left: 310px;
-               margin-top: 70px;
-               display: block;
-               text-decoration: underline;
-               cursor: pointer;
-           }
-       </style>
-   </head>
-   <body>
-   <form action="/users/login" method="post">
-       <div id="login_div">
-           <h2>登录</h2>
-           <input class="login_input" name="user" type="text" placeholder="请输入用户名" 
-            autofocus autocomplete="off"/><br/>
-           <input class="login_input" name="pwd" type="password" placeholder="请输入密碼"/><br/>
-           <div id="remember">
-               <p><input type="checkbox" style="vertical-align:-3px;"/>记住密码</p>
-               <p style="left:0;text-align:right">忘记密码?</p>
-           </div>
-           <input id="login" type="submit" value="登录"/>
-           <a href="register.html">注册账号</a>
-       </div>
-   </form>
-   </body>
-   </html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+    <style>
+        #login_div {
+            margin: 120px auto;
+            width: 380px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            background: url(images/img3.jpg) no-repeat center center;
+            border-radius: 8px;
+            box-shadow: 0 0 5px #000;
+            text-align: center;
+            font-family: "幼圆";
+            color: #fff;
+            text-shadow: 0 0 2px #000;
+        }
+        .login_input {
+            width: 220px;
+            height: 30px;
+            font-size: 12px;
+            border: 0;
+            border-radius: 5px;
+            margin-top: 10px;
+            outline: none;
+            position: relative;
+            top: 20px;
+            padding: 8px;
+            color: #ff5000;
+            font-weight: bolder;
+        }
+        #login_div>h2 {
+            position: relative;
+            top: 30px;
+            color: #fff;
+        }
+        #login {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            color: #fff;
+            background: #ff5050;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            position: relative;
+            top: 30px;
+        }
+        #remember {
+            width: 200px;
+            height: 30px;
+            border: 0;
+            margin: auto;
+            font-size: 12px;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #remember p {
+            margin-top: 5px;
+            border: 0;
+            padding: 0;
+            line-height: 20px;
+            height: 20px;
+            width: 100px;
+            float: left;
+            text-shadow: 0 0 1px #333;
+            position: relative;
+            text-align: left;
+            cursor: pointer;
+        }
+        #login_div a {
+            text-shadow: 0 0 1px #000;
+            font-size: 12px;
+            width: 55px;
+            height: 30px;
+            position: relative;
+            margin-left: 310px;
+            margin-top: 70px;
+            display: block;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <div id="login_div">
+            <h2>登录</h2>
+            <input class="login_input" name="user" id="user" type="text" placeholder="请输入用户名" autofocus autocomplete="off" />
+            <br/>
+            <input class="login_input" name="pwd" id="pwd" type="password" placeholder="请输入密碼" />
+            <br/>
+            <div id="remember">
+                <p>
+                    <input type="checkbox" style="vertical-align:-3px;" />记住密码</p>
+                <p style="left:0;text-align:right">忘记密码?</p>
+            </div>
+            <input id="login" type="submit" value="登录" />
+            <a href="register.html">注册账号</a>
+        </div>
+    </form>
+</body>
+<script>
+    var user = document.querySelector("#user")
+    var pwd = document.querySelector('#pwd')
+    var login = document.querySelector('#login')
+    var form = document.querySelector('form')
+    login.onclick = function (e) {
+        if (user.value === '' || pwd.value === '') {
+            e.preventDefault()
+            alert("用户名和密码必填......")
+        } else {
+            form.action = '/users/login'
+        }
+    }
+</script>
+</html>
    ```
 
    #### 3.再用HTML+CSS写出一个注册界面
 
    ```HTMl
    <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <title>Register</title>
-       <style>
-           #login_div {
-               margin: 120px auto;
-               width: 380px;
-               height: 300px;
-               background: rgba(255, 255, 255, 0.2);
-               background: url(images/img3.jpg) no-repeat center center;
-               border-radius: 8px;
-               box-shadow: 0 0 5px #000;
-               text-align: center;
-               font-family: "幼圆";
-               color: #fff;
-               text-shadow: 0 0 2px #000;
-           }
-           .login_input {
-               width: 220px;
-               height: 30px;
-               font-size: 12px;
-               border: 0;
-               border-radius:5px;
-               margin-top:10px;
-               outline: none;
-               position: relative;
-               top:20px;
-               color: #ff5000;
-               font-weight: bolder;
-               padding-left: 8px;
-           }
-           #login_div > h2 {
-               position: relative;
-               top: 30px;
-               color: #fff;
-           }
-           #login {
-               width: 200px;
-               height: 30px;
-               border-radius: 5px;
-               color: #fff;
-               background: #ff5050;
-               border: 0;
-               padding: 0;
-               cursor: pointer;
-               position: relative;
-               top: 50px;
-           }
-       </style>
-   </head>
-   <body>
-   <form action="/users/register" method="post">
-       <div id="login_div">
-           <h2>注册</h2>
-           <input class="login_input" name="user" type="text" autofocus placeholder="请输入用户名" 
-       	autocomplete="off"/><br/>
-           <input class="login_input" name="pwd" type="password" placeholder="请输入密码"/><br/>
-           <input class="login_input" name="" type="password" placeholder="请确认密码"/><br/>
-           <input id="login" type="submit" value="注册"/>
-       </div>
-   </form>
-   </body>
-   </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        #register_div {
+            margin: 120px auto;
+            width: 380px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            background: url(images/img3.jpg) no-repeat center center;
+            border-radius: 8px;
+            box-shadow: 0 0 5px #000;
+            text-align: center;
+            font-family: "幼圆";
+            color: #fff;
+            text-shadow: 0 0 2px #000;
+        }
+        .register_input {
+            width: 220px;
+            height: 30px;
+            font-size: 12px;
+            border: 0;
+            border-radius: 5px;
+            margin-top: 10px;
+            outline: none;
+            position: relative;
+            top: 20px;
+            color: #ff5000;
+            font-weight: bolder;
+            padding-left: 8px;
+        }
+        #register_div>h2 {
+            position: relative;
+            top: 30px;
+            color: #fff;
+        }
+        #register {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            color: #fff;
+            background: #ff5050;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            position: relative;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <div id="register_div">
+            <h2>注册</h2>
+            <input class="register_input" name="user" id="user" type="text" autofocus placeholder="请输入用户名" autocomplete="off" />
+            <br/>
+            <input class="register_input" name="pwd" id="pwd" type="password" placeholder="请输入密码" />
+            <br/>
+            <input class="register_input" name="confirm" id="confirm" type="password" placeholder="请确认密码" />
+            <br/>
+            <input id="register" type="submit" value="注册" />
+        </div>
+    </form>
+    <script>
+        var user = document.querySelector('#user')
+        var pwd = document.querySelector('#pwd')
+        var confirm = document.querySelector('#confirm')
+        var register = document.querySelector('#register')
+        var form = document.querySelector('form')
+        register.onclick = function (e) {
+        if (user.value === '' || pwd.value === '') {
+            e.preventDefault()
+            alert("用户名和密码必填......")
+        } else if(pwd.value !== confirm.value){
+            e.preventDefault()
+            pwd.value = ""
+            confirm.value = ""
+            alert("两次填写的密码不一致......")
+        } else{
+            form.action = '/users/register'
+        }
+    }
+    </script>
+</body>
+</html>
    ```
 
    > 准备工作做好后,我们开始写核心的东西
