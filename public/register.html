@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        #register_div {
+            margin: 120px auto;
+            width: 380px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            background: url(images/img3.jpg) no-repeat center center;
+            border-radius: 8px;
+            box-shadow: 0 0 5px #000;
+            text-align: center;
+            font-family: "幼圆";
+            color: #fff;
+            text-shadow: 0 0 2px #000;
+        }
+
+        .register_input {
+            width: 220px;
+            height: 30px;
+            font-size: 12px;
+            border: 0;
+            border-radius: 5px;
+            margin-top: 10px;
+            outline: none;
+            position: relative;
+            top: 20px;
+            color: #ff5000;
+            font-weight: bolder;
+            padding-left: 8px;
+        }
+
+        #register_div>h2 {
+            position: relative;
+            top: 30px;
+            color: #fff;
+        }
+
+        #register {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            color: #fff;
+            background: #ff5050;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            position: relative;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post">
+        <div id="register_div">
+            <h2>注册</h2>
+            <input class="register_input" name="user" id="user" type="text" autofocus placeholder="请输入用户名" autocomplete="off" />
+            <br/>
+            <input class="register_input" name="pwd" id="pwd" type="password" placeholder="请输入密码" />
+            <br/>
+            <input class="register_input" name="confirm" id="confirm" type="password" placeholder="请确认密码" />
+            <br/>
+            <input id="register" type="submit" value="注册" />
+        </div>
+    </form>
+    <script>
+        var user = document.querySelector('#user')
+        var pwd = document.querySelector('#pwd')
+        var confirm = document.querySelector('#confirm')
+        var register = document.querySelector('#register')
+        var form = document.querySelector('form')
+        register.onclick = function (e) {
+        if (user.value === '' || pwd.value === '') {
+            e.preventDefault()
+            alert("用户名和密码必填......")
+        } else if(pwd.value !== confirm.value){
+            e.preventDefault()
+            pwd.value = ""
+            confirm.value = ""
+            alert("两次填写的密码不一致......")
+        } else{
+            form.action = '/users/register'
+        }
+    }
+    </script>
+</body>
+
+</html>

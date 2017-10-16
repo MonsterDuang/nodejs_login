@@ -1,0 +1,130 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+    <style>
+        #login_div {
+            margin: 120px auto;
+            width: 380px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            background: url(images/img3.jpg) no-repeat center center;
+            border-radius: 8px;
+            box-shadow: 0 0 5px #000;
+            text-align: center;
+            font-family: "幼圆";
+            color: #fff;
+            text-shadow: 0 0 2px #000;
+        }
+
+        .login_input {
+            width: 220px;
+            height: 30px;
+            font-size: 12px;
+            border: 0;
+            border-radius: 5px;
+            margin-top: 10px;
+            outline: none;
+            position: relative;
+            top: 20px;
+            padding: 8px;
+            color: #ff5000;
+            font-weight: bolder;
+        }
+
+        #login_div>h2 {
+            position: relative;
+            top: 30px;
+            color: #fff;
+        }
+
+        #login {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            color: #fff;
+            background: #ff5050;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            position: relative;
+            top: 30px;
+        }
+
+        #remember {
+            width: 200px;
+            height: 30px;
+            border: 0;
+            margin: auto;
+            font-size: 12px;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+
+        #remember p {
+            margin-top: 5px;
+            border: 0;
+            padding: 0;
+            line-height: 20px;
+            height: 20px;
+            width: 100px;
+            float: left;
+            text-shadow: 0 0 1px #333;
+            position: relative;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        #login_div a {
+            text-shadow: 0 0 1px #000;
+            font-size: 12px;
+            width: 55px;
+            height: 30px;
+            position: relative;
+            margin-left: 310px;
+            margin-top: 70px;
+            display: block;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post">
+        <div id="login_div">
+            <h2>登录</h2>
+            <input class="login_input" name="user" id="user" type="text" placeholder="请输入用户名" autofocus autocomplete="off" />
+            <br/>
+            <input class="login_input" name="pwd" id="pwd" type="password" placeholder="请输入密碼" />
+            <br/>
+            <div id="remember">
+                <p>
+                    <input type="checkbox" style="vertical-align:-3px;" />记住密码</p>
+                <p style="left:0;text-align:right">忘记密码?</p>
+            </div>
+            <input id="login" type="submit" value="登录" />
+            <a href="register.html">注册账号</a>
+        </div>
+    </form>
+
+</body>
+<script>
+    var user = document.querySelector("#user")
+    var pwd = document.querySelector('#pwd')
+    var login = document.querySelector('#login')
+    var form = document.querySelector('form')
+    login.onclick = function (e) {
+        if (user.value === '' || pwd.value === '') {
+            e.preventDefault()
+            alert("用户名和密码必填......")
+        } else {
+            form.action = '/users/login'
+        }
+    }
+</script>
+
+</html>
