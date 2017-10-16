@@ -418,10 +418,9 @@ router.get('/', function(req, res, next) {
    ```
 
    #### 2.再用HTML+CSS写出一个登陆界面
-
-   ```HTML
-<!DOCTYPE html>
-<html lang="en">
+```html
+  <!DOCTYPE>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
@@ -524,22 +523,23 @@ router.get('/', function(req, res, next) {
             <a href="register.html">注册账号</a>
         </div>
     </form>
-    <script>
-        var user = document.querySelector("#user")
-        var pwd = document.querySelector('#pwd')
-        var login = document.querySelector('#login')
-        var form = document.querySelector('form')
-        login.onclick = function (e) {
-            if (user.value === '' || pwd.value === '') {
-                e.preventDefault()
-                alert("用户名和密码必填......")
-            } else {
-                form.action = '/users/login'
-            }
+</body>
+<script>
+    var user = document.querySelector("#user")
+    var pwd = document.querySelector('#pwd')
+    var login = document.querySelector('#login')
+    var form = document.querySelector('form')
+    login.onclick = function (e) {
+        if (user.value === '' || pwd.value === '') {
+            e.preventDefault()
+            alert("用户名和密码必填......")
+        } else {
+            form.action = '/users/login'
         }
-    </script>
- </body>
-</html>```
+    }
+</script>
+</html>
+```
 
    #### 3.再用HTML+CSS写出一个注册界面
 
