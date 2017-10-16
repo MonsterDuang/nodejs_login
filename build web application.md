@@ -735,8 +735,7 @@ router.get('/', function(req, res, next) {
    ```
 
    ```tex
-   	这里要注意的是:判断用户是否存在,要和注册成功之后将数据写入分开来写. 还有一点就是  JSON.stringify(arr) 的使用,就是将
-   JavaScript对象转换成Json数据,这点很重要,要不然数据库中的数据将全是 [object Object].
+   	这里要注意的是:判断用户是否存在,要和注册成功之后将数据写入分开来写. 还有一点就是  JSON.stringify(arr) 的使用,就是将JavaScript对象转换成Json数据,这点很重要,要不然数据库中的数据将全是 [object Object].
    ```
 
    #### 3.还有最重要的一步
@@ -754,7 +753,7 @@ router.get('/', function(req, res, next) {
    - webstorm 打开bin/www.js文件,点击鼠标右键,在选择 Run'www' ,或者按快捷键  Ctrl+Shift+F10.
    - 打开电脑终端 找到工程文件夹 输入node www.js. 也可以运行www.js. 前提本文前面两大点都完成了.
 
-   b.然后打开浏览器,在地址栏输入 http://127.0.0.1:3000/login.html 进入登陆界面.
+   b.然后打开浏览器,在地址栏输入 http://127.0.0.1:8080/login.html 进入登陆界面.
 
    #### 2.注册测试
 
