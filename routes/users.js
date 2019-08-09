@@ -23,23 +23,11 @@ router.post('/login', function (req, res) {
             //遍歷數據 找出不匹配的對象  返回登錄失敗
             for (let obj of arr) {
                 if (obj.user != user && obj.pwd != pwd) {
-                    res.send("<h1 style='color:red'>! Login fail</h1> userName&Password error" +
-                        "<script>" +
-                        "setTimeout(function back(){window.location='/login.html'},3000)" +
-                        "</script>" +
-                        "<p>登陸失敗! 3秒后自动返回到登陆界面.....</p>");
+                    res.send(`<h1 style='color:red'>! Login fail</h1> userName&Password error<script>setTimeout(function back(){window.location='/login.html'},3000)</script><p>登陸失敗! 3秒后自动返回到登陆界面.....</p>`);
                 } else if (obj.user != user) {
-                    res.send("<h1 style='color:red'>! Login fail</h1> userName error" +
-                        "<script>" +
-                        "setTimeout(function(){window.location='/login.html'},3000)" +
-                        "</script>" +
-                        "<p>登陸失敗! 3秒后自动返回到登陆界面.....</p>");
+                    res.send(`<h1 style='color:red'>! Login fail</h1> userName error<script>setTimeout(function(){window.location='/login.html'},3000)</script><p>登陸失敗! 3秒后自动返回到登陆界面.....</p>`);
                 } else {
-                    res.send("<h1 style='color:red'>! Login fail</h1> Password error" +
-                        "<script>" +
-                        "setTimeout(function(){window.location='/login.html'},3000)" +
-                        "</script>" +
-                        "<p>登陸失敗! 3秒后自动返回到登陆界面.....</p>");
+                    res.send(`<h1 style='color:red'>! Login fail</h1> Password error<script>setTimeout(function(){window.location='/login.html'},3000)</script><p>登陸失敗! 3秒后自动返回到登陆界面.....</p>`);
                 }
                 return;
             }
@@ -59,11 +47,7 @@ router.post('/register', function (req, res) {
         //查詢數據庫中是否會有用戶註冊的數據  存在的話 提示用戶已存在
         for (let obj of arr) {
             if (obj.user == user) {
-                res.send("<h1 style='color:orange'>Register fail</h1>" +
-                    "<script>" +
-                    "setTimeout(function(){window.location='/register.html'},3000)" +
-                    "</script>" +
-                    "<p>已存在该用户名! 3秒后自动返回到注册页面.....</p>");
+                res.send(`<h1 style='color:orange'>Register fail</h1><script>setTimeout(function(){window.location='/register.html'},3000)</script><p>已存在该用户名! 3秒后自动返回到注册页面.....</p>`);
                 return;
             }
         }
@@ -72,11 +56,7 @@ router.post('/register', function (req, res) {
         var obj = {"user": user, "pwd": pwd}
         arr.push(obj);
         fs.writeFile("../data/data.json", JSON.stringify(arr), "utf-8", function (error) {
-            res.send("<h1 style='color:orange'>Register success</h1>" +
-                "<script>" +
-                "setTimeout(function(){window.location='/login.html'},3000)" +
-                "</script>" +
-                "<p>注册成功! 3秒后自动跳转到登陆界面.....</p>");
+            res.send(`<h1 style='color:orange'>Register success</h1><script>setTimeout(function(){window.location='/login.html'},3000)</script><p>注册成功! 3秒后自动跳转到登陆界面.....</p>`);
             return;
         })
     })
